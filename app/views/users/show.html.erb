@@ -2,10 +2,21 @@
 
     <tbody>
         <h1>User Info</h1>
-                <strong>name</strong>
-                <%= @users.name %>
-                <strong>introduction</strong>
-                <%= @users.introduction %>
+        <% @post_images.each do |post_images| %>
+
+        <tr>
+            <td>
+              <strong>name</strong>
+              <%= @users.name %>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+              <strong>introduction</strong>
+              <%= @users.introduction %>
+            </td>
+        </tr>
 
         <h1>New Book</h1>
             <p>Title</p>

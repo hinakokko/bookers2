@@ -1,10 +1,18 @@
 <h1>User info</h1>
 
-<%= @users.each do |user| %>
-
 <p>name</p>
-<span><%= user.name %></span>
-<p>introduction</p>
-<span><%= user.introduction %></span>
 
-<% end %>
+<span><%= @users.name %></span>
+<p>introduction</p>
+<span><%= @users.introduction %></span>
+
+<h1>New Book</h1>
+    <p>Title</p>
+    <%= form_with model: @users do |f| %>
+    <%= f.text_field :title %>
+
+    <p>Opinion</p>
+    <%= f.text_area :body %>
+    <% end %>
+
+    <%= link_to 'Create Book', books_path %>

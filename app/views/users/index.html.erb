@@ -1,10 +1,17 @@
 <h1>User info</h1>
+<div>
+    <h3><%= @users.name %></h3>
+</div>
+
+<%= form_with model: @post_images do |f| %>
+<%= f.file_field :image, accept: "image/*" %>
 
 <p>name</p>
-
 <span><%= @users.name %></span>
 <p>introduction</p>
 <span><%= @users.introduction %></span>
+
+<% end %>
 
 <h1>New Book</h1>
     <p>Title</p>

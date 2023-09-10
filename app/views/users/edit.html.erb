@@ -14,12 +14,12 @@
     <%= f.text_field :name %>
 
     <h4>Image</h4>
-
+    <%= f.file_field :image, accept: "image/*" %>
 
     <h4>introduction</h4>
     <%= f.text_area :introduction %>
 
-    <%= f.submit 'Update User' %>
+    <%= link_to 'Update User', users_path %>
 
   <% end %>
 

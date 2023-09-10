@@ -8,11 +8,14 @@ class BooksController < ApplicationController
     @books = Books.new
   end
 
+  def edit
+  end
+
   def show
   end
 
   def create
-    @books = Books.new(books_params)
+    @books = Books.new(book_path_params)
     @books.user_id = current_user.id
     @books.save
   end

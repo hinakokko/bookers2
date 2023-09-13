@@ -5,12 +5,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.find(params[:id])
+    @users = Book.find(params[:id])
     @users = User.new
     @post_images = @user.post_images
+    @users = User.find(user)
   end
 
   def edit
+
   end
 
   def create

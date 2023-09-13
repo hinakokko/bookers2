@@ -1,0 +1,12 @@
+<h1>Editing Book</h1>
+
+    <p>Title</p>
+    <%= form_with model: @users do |f| %>
+    <%= f.text_field :title %>
+
+    <p>Opinion</p>
+    <%= f.text_area :body %>
+    <% end %>
+
+
+    <%= link_to 'Create Book', books_path %>

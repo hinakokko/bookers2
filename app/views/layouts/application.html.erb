@@ -11,20 +11,25 @@
   </head>
 
   <body>
-    <head>
-      <% if user_signed_in? %>
-        <li>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-        <li>
-          <link_to "ログイン", new_user_session_path %>
-        </li>
-      <% end %>
-    </head>
-       <%= yield %>
+    <header>
+    <% if user_signed_in? %>
+    <tr>
+      <td><%= link_to "Bookers", root_path %></td>
+      <td><%= link_to "Home", root_path %></td>
+      <td><%= link_to "About", home_about_path %></td>
+      <td><%= link_to "Sign up", new_user_registration_path %></td>
+      <td><%= link_to "Log in", new_user_session_path %></td>
+    </tr>
+    <% else %>
+    <tr>
+      <td><%= link_to "Bookers", root_path %></td>
+      <td><%= link_to "Home", root_path %></td>
+      <td><%= link_to "About", home_about_path %></td>
+      <td><%= link_to "Sign up", new_user_registration_path %></td>
+      <td><%= link_to "Log in", new_user_session_path %></td>
+    </tr>
+    <% end %>
+  </header>
+   <%= yield %>
   </body>
 </html>

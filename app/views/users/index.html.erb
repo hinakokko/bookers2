@@ -1,31 +1,41 @@
 <script src="https://kit.fontawesome.com/2ff29df84d.js" crossorigin="anonymous"></script>
-    <h1>User info</h1>
-    <div>
-    <h3><%= @users.name %></h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h1>User Info</h1>
+
+            <tbody>
+                <tr>
+                    <th><strong>name</strong></th>
+                    <th><strong><%= @users.name %></strong></th>
+                </tr>
+
+                <tr>
+                    <th><strong>introduction</strong></th>
+                    <th><strong><%= @users.introduction %></strong></th>
+                </tr>
+            </tbody>
+
+            <%= link_to "edit_user_path",class: 'btn btn-outline-secondary btn-block edit_user_133688' do %>
+            <i class="fa-solid fa-user-gear"></i>
+            <% end %>
+
+             <h1>New Book</h1>
+            <p>Title</p>
+            <%= form_with model: @users do |f| %>
+
+            <%= f.text_field :title %>
+            <p>Opinion</p>
+            <%= f.text_area :body %>
+
+            <% end %>
+
+            <%= link_to 'Create Book', books_path %>
+        </div>
+
+        <div class="col-md-8 offset-md-1">
+            <h1>Books</h1>
+        </div>
+
     </div>
-
-    <%= form_with model: @post_images do |f| %>
-    <%= f.file_field :image, accept: "image/*" %>
-
-    <strong>name</strong>
-    <strong><%= @users.name %></strong>
-
-    <li><strong>introduction</strong></li>
-    <li><strong><%= @users.introduction %></strong></li>
-    <% end %>
-
-    <li><%= link_to "edit_user_path",class: 'btn btn-outline-secondary btn-block edit_user_133688' do %>
-    <i class="fa-solid fa-user-gear"></i>
-    <% end %>
-    </li>
-
-    <h1>New Book</h1>
-        <p>Title</p>
-        <%= form_with model: @users do |f| %>
-        <%= f.text_field :title %>
-
-        <p>Opinion</p>
-        <%= f.text_area :body %>
-        <% end %>
-
-    <%= link_to 'Create Book', books_path %>
+</div>

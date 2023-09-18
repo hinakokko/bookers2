@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/2ff29df84d.js" crossorigin="anonymous"></script>
 <h1>User info</h1>
 <div>
     <h3><%= @users.name %></h3>
@@ -6,12 +7,19 @@
 <%= form_with model: @post_images do |f| %>
 <%= f.file_field :image, accept: "image/*" %>
 
-<p>name</p>
-<span><%= @users.name %></span>
-<p>introduction</p>
-<span><%= @users.introduction %></span>
 
+<li><strong>name</strong></li>
+<li><strong><%= @users.name %></strong></li>
 <% end %>
+
+<li><strong>introduction</strong></li>
+<li><strong><%= @users.introduction %></strong></li>
+<% end %>
+
+<li><%= link_to "edit_user_path",class: 'btn btn-outline-secondary btn-block edit_user_133688' do %>
+<i class="fa-solid fa-user-gear"></i>
+</li>
+
 
 <h1>New Book</h1>
     <p>Title</p>
@@ -24,4 +32,3 @@
 
 
     <%= link_to 'Create Book', books_path %>
-<% end %>

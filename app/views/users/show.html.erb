@@ -6,17 +6,22 @@
         <div class="col-md-3">
             <h1>User Info</h1>
 
+            <div class="table">
             <tbody>
                 <tr>
-                    <th><strong>name</strong></th>
-                    <th><strong><%= @users.name %></strong></th>
-                </tr>
+                    <td><strong>name</strong></td>
+                    <td><strong><%= @users.name %></strong></td>
+            </tbody>
+            </div>
 
+            <div class="table">
+            <tbody>
                 <tr>
-                    <th><strong>introduction</strong></th>
-                    <th><strong><%= @users.introduction %></strong></th>
+                    <td><strong>introduction</strong></td>
+                    <td><strong><%= @users.introduction %></strong></td>
                 </tr>
             </tbody>
+            </div>
 
             <%= link_to "edit_user_path",class: 'btn btn-outline-secondary btn-block edit_user_133688' do %>
             <i class="fa-solid fa-user-gear"></i>

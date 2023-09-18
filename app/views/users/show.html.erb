@@ -1,28 +1,37 @@
 
-    <script src="https://kit.fontawesome.com/2ff29df84d.js" crossorigin="anonymous"></script>
-        <h1>User Info</h1>
+<script src="https://kit.fontawesome.com/2ff29df84d.js" crossorigin="anonymous"></script>
 
-<!--        <tr>
-            <td>
-              <strong>name</strong>
-              <%= @users.name %>
-            </td>
-        </tr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h1>User Info</h1>
 
-        <tr>
-            <td>
-              <strong>introduction</strong>
-              <%= @users.introduction %>
-            </td>
-        </tr>
--->
-        <h1>New Book</h1>
+            <strong>name</strong>
+            <strong><%= @users.name %></strong>
+
+            <strong>introduction</strong>
+            <strong><%= @users.introduction %></strong>
+
+            <%= link_to "edit_user_path",class: 'btn btn-outline-secondary btn-block edit_user_133688' do %>
+            <i class="fa-solid fa-user-gear"></i>
+            <% end %>
+
+             <h1>New Book</h1>
             <p>Title</p>
             <%= form_with model: @users do |f| %>
-            <%= f.text_field :title %>
 
+            <%= f.text_field :title %>
             <p>Opinion</p>
             <%= f.text_area :body %>
+
             <% end %>
 
             <%= link_to 'Create Book', edit_book_path %>
+        </div>
+
+        <div class="col-md-8 offset-md-1">
+            <h1>Books</h1>
+        </div>
+
+    </div>
+</div>

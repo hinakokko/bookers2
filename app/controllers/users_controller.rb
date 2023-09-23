@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @book = Book.new
     @books = @user.books
+    @users = User.all
   end
 
   def edit
@@ -16,10 +17,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @users = User.new(edit_user_path)
+    @book = User.new(book_params)
+    @book.user_id = current_user.id
     User.save
     flash[:notice] = "You have updated user successfully."
-    redirect_to user_path(resource)
+    redirect_to users_path(@user.id)
   end
 
   private

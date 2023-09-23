@@ -7,6 +7,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.string :body
       t.string :name
       t.string :introduction
+      t.syring :image
     end
   end
 end

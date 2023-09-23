@@ -10,7 +10,7 @@
             <tbody>
                 <tr>
                     <td><strong>name</strong></td>
-                    <td><strong><%= @users.name %></strong></td>
+                    <td><strong><%= @user.name %></strong></td>
             </tbody>
             </div>
 
@@ -18,7 +18,7 @@
             <tbody>
                 <tr>
                     <td><strong>introduction</strong></td>
-                    <td><strong><%= @users.introduction %></strong></td>
+                    <td><strong><%= @user.introduction %></strong></td>
                 </tr>
             </tbody>
             </div>
@@ -29,7 +29,7 @@
 
              <h1>New Book</h1>
             <p>Title</p>
-            <%= form_with model: @users do |f| %>
+            <%= form_with model: @book_new do |f| %>
 
             <%= f.text_field :title %>
             <p>Opinion</p>
@@ -42,7 +42,7 @@
 
         <div class="col-md-8 offset-md-1">
             <h1>Books</h1>
-            
+
         </div>
 
     </div>

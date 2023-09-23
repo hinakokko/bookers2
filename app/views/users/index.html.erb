@@ -33,7 +33,7 @@
               <p>Opinion</p>
               <%= f.text_area :body %>
 
-              <%= f.submit 'Create Book' %>
+              <button type="button" class="btn btn-success"><%= f.submit 'Create Book' %></button>
             <% end %>
         </div>
 
@@ -52,7 +52,7 @@
                 <tr>
                     <td scope="col">
                         <%= image_tag @user.get_profile_image(100, 100) %>
-                        <% @users.each do |user| %>
+                        <% @users.each do |users| %>
                         <% end %>
                     </td>
                     <td scope="col">

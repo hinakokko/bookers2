@@ -12,15 +12,15 @@
             <i class="fa-solid fa-user-gear"></i>
             <% end %>
 
-             <h2>New Book</h2>
+            <h2>New Book</h2>
             <%= form_with model: @book_new do |f| %>
-             <p>Title</p>
-             <%= f.text_field :title %>
+            <p>Title</p>
+            <%= f.text_field :title %>
 
-              <p>Opinion</p>
-              <%= f.text_area :body %>
+            <p>Opinion</p>
+            <%= f.text_area :body %>
 
-              <%= f.submit 'Create Book', class: "btn btn-success" %>
+            <%= f.submit 'Create Book', class: "btn btn-success" %>
             <% end %>
         </div>
 
@@ -37,7 +37,7 @@
                         </td>
 
                         <td scope="col">
-                        <%= @book.title %>
+                        <%= link_to @book.title, book_path %>
                         </td>
 
                         <td scope="col">

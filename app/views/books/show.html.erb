@@ -1,49 +1,60 @@
-
 <script src="https://kit.fontawesome.com/2ff29df84d.js" crossorigin="anonymous"></script>
-
 <div class="container">
     <div class="row">
         <div class="col-md-3">
             <h1>User Info</h1>
+            <p><%= image_tag @user.get_profile_image(100,100) %></p>
 
-            <div class="table">
-            <tbody>
-                <tr>
-                    <td><strong>name</strong></td>
-                    <td><strong><%= @user.name %></strong></td>
-            </tbody>
-            </div>
-
-            <div class="table">
-            <tbody>
-                <tr>
-                    <td><strong>introduction</strong></td>
-                    <td><strong><%= @user.introduction %></strong></td>
-                </tr>
-            </tbody>
-            </div>
-
-            <%= link_to "edit_user_path",class: 'btn btn-outline-secondary btn-block edit_user_133688' do %>
+            <%= link_to edit_user_path, class: 'btn btn-outline-secondary btn-block edit_user_133688' do %>
             <i class="fa-solid fa-user-gear"></i>
             <% end %>
 
-             <h1>New Book</h1>
-            <p>Title</p>
-            <%= form_with model: @book_new do |f| %>
+             <h2>New Book</h2>
+            <%= form_with model: @book do |f| %>
+             <p>Title</p>
+             <%= f.text_field :title %>
 
-            <%= f.text_field :title %>
-            <p>Opinion</p>
-            <%= f.text_area :body %>
+              <p>Opinion</p>
+              <%= f.text_area :body %>
 
+              <%= f.submit 'Create Book', class: "btn btn-success" %>
             <% end %>
-
-            <%= link_to 'Create Book', book_path %>
         </div>
 
-        <div class="col-md-8 offset-md-1">
-            <h1>Books</h1>
+        <div class="col-md-9">
+            <h3>Book detail</h3>
 
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td scope="col">
+                        <%= image_tag @user.get_profile_image(100, 100) %>
+                        <br>
+                        <%= link_to @user.name, user_path %>
+                        <% @user.name do |user| %>
+                        <% end %>
+
+                        <td scope="col">
+                        <%= @book_new.title %>
+                        <% @book_new.title do |book| %>
+                        <% end %>
+                        </td>
+
+                        <td scope="col">
+                        <%= @book_new.body %>
+                        <% @book_new.body do |book| %>
+                        <% end %>
+                        </td>
+
+                        <td scope="col">
+                        <%= link_to 'EDIT', edit_book_path(@user) %>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+            </div>
         </div>
-
     </div>
 </div>
+
+

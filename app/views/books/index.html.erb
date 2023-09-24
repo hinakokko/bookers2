@@ -5,20 +5,7 @@
             <h1>User Info</h1>
             <p><%= image_tag @user.get_profile_image(100,100) %></p>
 
-            <table class="table">
-            <tbody>
-                <tr>
-                    <th scope="row">name</th>
-                    <th><%= @user.name %></th>
-                </tr>
-                <tr>
-                    <th scope="row">introduction</th>
-                    <th><%= @user.introduction %></th>
-                </tr>
-            </tbody>
-            </table>
-
-            <%= link_to "users_edit_path",class: 'btn btn-outline-secondary btn-block edit_user_133688' do %>
+            <%= link_to edit_user_path(@user), class: 'btn btn-outline-secondary btn-block edit_user_133688' do %>
             <i class="fa-solid fa-user-gear"></i>
             <% end %>
 
@@ -45,19 +32,6 @@
                 </tr>
                 </thead>
                 <br>
-                <br>
-                <tbody>
-                <tr>
-                    <td scope="col">
-                        <%= image_tag @user.get_profile_image(100, 100) %>
-                        <% @books.each do |book| %>
-
-                        <% end %>
-                    </td>
-                </tr>
-
-                </tbody>
-
             </table>
         </div>
     </div>

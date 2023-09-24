@@ -36,11 +36,18 @@ class BooksController < ApplicationController
     book.destroy
     redirect_to '/books'
   end
+  
+  def update
+    @user = User.find(params[:id])
+    @user.update(users_params)
+    flash[:notice] = "You have updated user successfully."
+    redirect_to user_path(@user.id)
+  end
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :image, :body)
+    params.require(:book).permit(:title, :profile_image, :body)
   end
 
 end

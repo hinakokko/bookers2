@@ -1,10 +1,10 @@
 <script src="https://kit.fontawesome.com/2ff29df84d.js" crossorigin="anonymous"></script>
+<div>
+<%= flash[:notice] %>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <div>
-            <%= flash[:notice] %>
-            </div>
             <h1>User Info</h1>
             <p><%= image_tag @user.get_profile_image(100,100) %></p>
 
@@ -13,7 +13,7 @@
             <% end %>
 
              <h2>New Book</h2>
-            <%= form_with model: @book do |f| %>
+            <%= form_with model: @book_new do |f| %>
              <p>Title</p>
              <%= f.text_field :title %>
 
@@ -34,20 +34,14 @@
                         <%= image_tag @user.get_profile_image(100, 100) %>
                         <br>
                         <%= link_to @user.name, user_path %>
-                        <% @user.name do |user| %>
-                        <% end %>
                         </td>
 
                         <td scope="col">
-                        <%= @book_new.title %>
-                        <% @book_new.title do |book| %>
-                        <% end %>
+                        <%= @book.title %>
                         </td>
 
                         <td scope="col">
-                        <%= @book_new.body %>
-                        <% @book_new.body do |book| %>
-                        <% end %>
+                        <%= @book.body %>
                         </td>
 
                         <td scope="col">

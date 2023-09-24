@@ -13,21 +13,27 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.new
+    @user = User.find(params[:id])
   end
 
   def create
     @book = User.new(book_params)
     @book.user_id = current_user.id
     User.save
-    flash[:notice] = "You have updated user successfully."
     redirect_to users_path(@user.id)
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(users_params)
+    flash[:notice] = "You have updated user successfully."
+    redirect_to user_path(@user.id)
   end
 
   private
 
   def users_params
-    params_require(:users).permit(:title, :body)
+    params.require(:user).permit(:name, :introduction, :profile_image)
   end
 
 end

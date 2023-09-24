@@ -2,6 +2,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
+            <div>
+            <%= flash[:notice] %>
+            </div>
             <h1>User Info</h1>
             <p><%= image_tag @user.get_profile_image(100,100) %></p>
 
@@ -33,6 +36,7 @@
                         <%= link_to @user.name, user_path %>
                         <% @user.name do |user| %>
                         <% end %>
+                        </td>
 
                         <td scope="col">
                         <%= @book_new.title %>
@@ -47,7 +51,11 @@
                         </td>
 
                         <td scope="col">
-                        <%= link_to 'EDIT', edit_book_path(@user) %>
+                        <%= link_to 'Edit', edit_book_path, class: "btn btn-success" %>
+                        </td>
+
+                        <td scope="col">
+                        <%= link_to 'Destroy', books_path, class: "btn btn-danger" %>
                         </td>
                     </tr>
                 </thead>

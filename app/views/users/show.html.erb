@@ -1,11 +1,10 @@
 <script src="https://kit.fontawesome.com/2ff29df84d.js" crossorigin="anonymous"></script>
-<div>
-<%= flash[:notice] %>
-</div>
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <h1>User Info</h1>
+            <div class="pt-3">
+            <h2>User Info</h2>
+            </div>
             <p><%= image_tag @user.get_profile_image(100,100) %></p>
 
             <table class="table">
@@ -25,7 +24,9 @@
             <i class="fa-solid fa-user-gear"></i>
             <% end %>
 
-             <h2>New Book</h2>
+            <div class="pt-3">
+            <h2>New Book</h2>
+            </div>
             <%= form_with model: @book do |f| %>
              <p>Title</p>
              <%= f.text_field :title %>

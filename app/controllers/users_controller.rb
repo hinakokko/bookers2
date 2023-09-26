@@ -19,13 +19,8 @@ class UsersController < ApplicationController
   def create
     @book = User.new(book_params)
     @book.user_id = current_user.id
-    if User.save
-      redirect_to users_path(@user.id)
-    else
-      redirect_to book_path(@user.id)
-      flash.now[:notice] = "・Title can't be blank・Body can't be blank"
-      render :new
-    end
+    User.save
+    redirect_to users_path(@user.id)
   end
 
   def update

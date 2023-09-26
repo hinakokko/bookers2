@@ -2,7 +2,9 @@ class Book < ApplicationRecord
   belongs_to :user
 
   has_many :users, dependent: :destroy
-  
+  validates :title, presence: true
+  validates :body, presence: true
+
   def get_profile_image(width, height)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/dog.jpg')

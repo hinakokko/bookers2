@@ -5,7 +5,7 @@
             <div class="pt-3">
             <h2>User Info</h2>
             </div>
-            <p><%= image_tag @user.get_profile_image(100,100) %></p>
+            <p><%= image_tag @user.get_profile_image(100,100)  %></p>
 
             <table class="table">
             <tbody>
@@ -43,12 +43,20 @@
 
             <table class="table">
                 <thead>
-                <tr>
+                    <tr>
                     <th scope="col"><p class="font-weight-bold">Title</p></th>
                     <th scope="col"><p class="font-weight-bold">Opinion</p></th>
-                </tr>
+                    </tr>
                 </thead>
-                <br>
+                <tbody>
+                    <tr>
+                    <td scope="col">
+                        <%= link_to image_tag(@user.get_profile_image(100, 100)), user_path %>
+                        <br>
+                        <%= link_to @user.name, user_path %>
+                    </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>

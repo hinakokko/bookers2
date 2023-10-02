@@ -31,7 +31,7 @@
             <i class="fa-solid fa-user-gear"></i>
             <% end %>
 
-             <h2>New Book</h2>
+             <h2>New book</h2>
             <%= form_with model: @book do |f| %>
              <p>Title</p>
              <%= f.text_field :title %>
@@ -55,8 +55,8 @@
                 </tr>
                   <% @books.each do |book| %>
                   <tr>
-                    <td scope="col"><p class="my-1"><%= image_tag @user.get_profile_image(100, 100) %></p></td>
-                    <td><%= book.title %></td>
+                    <td scope="col"><p class="my-1"><%= image_tag book.user.get_profile_image(100, 100) %></p></td>
+                    <td><%= link_to book.title, book_path(book.id)%></td>
                     <td><%= book.body %></td>
                   <% end %>
                 </tr>

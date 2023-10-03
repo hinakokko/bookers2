@@ -41,24 +41,18 @@
 
             <table class="table">
                 <thead>
-                <tr>
-                    <th scope="col"><p class="font-weight-bold">image</p></th>
-                    <th scope="col"><p class="font-weight-bold">name</p></th>
-                </tr>
+                    <tr>
+                        <th scope="col"><p class="font-weight-bold">image</p></th>
+                        <th scope="col"><p class="font-weight-bold">name</p></th>
+                    </tr>
+                    <% @users.each do |user| %>
+                    <tr>
+                        <td scope="col"><p class="my-1"><%= image_tag user.get_profile_image(100, 100) %></p></td>
+                        <td scope="col"><p class="w-50"><%= user.name %></p></td>
+                        <td scope="col"><p class="my-1"><%= link_to 'Show', user_path(user.id) %></p></td>
+                    </tr>
+                    <% end %>
                 </thead>
-                <br>
-                <tbody>
-                <tr>
-                        <% @users.each do |user| %>
-                            <table>
-                            <td scope="col"><p class="my-1"><%= image_tag user.get_profile_image(100, 100) %></p></td>
-                            <td scope="col"><p class="w-50"><%= user.name %></p></td>
-                            <td scope="col"><p class="my-1"><%= link_to 'Show', user_path(user.id) %></p></td>
-                            </table>
-                        <% end %>
-                       <th>
-                </tr>
-                </tbody>
             </table>
         </div>
     </div>

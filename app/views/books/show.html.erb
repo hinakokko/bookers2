@@ -10,7 +10,7 @@
             <i class="fa-solid fa-user-gear"></i>
             <% end %>
 
-            <h2>New Book</h2>
+            <h2>New book</h2>
             <%= form_with model: @book_new do |f| %>
             <p>Title</p>
             <%= f.text_field :title %>
@@ -43,11 +43,15 @@
                         </td>
 
                         <td scope="col">
-                        <%= link_to 'Edit', edit_book_path, class: "btn btn-success" %>
+                        <% if @user == current_user %>
+                        <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-success" %>
+                        <% end %>
                         </td>
 
                         <td scope="col">
-                        <%= link_to 'Destroy', books_path, class: "btn btn-danger" %>
+                        <% if @user == current_user %>
+                        <%= link_to 'Destroy', book_path(@book), method: :delete, class: "btn btn-danger" %>
+                        <% end %>
                         </td>
                     </tr>
                 </thead>

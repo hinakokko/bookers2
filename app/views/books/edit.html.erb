@@ -7,23 +7,23 @@
             </div>
 
             <p>Title</p>
-            <%= form_with model: @users do |f| %>
+            <%= form_with model: @book, method: :patch do |f| %>
             <%= f.text_field :title %>
 
             <p>Opinion</p>
             <div class="px-50">
             <%= f.text_area :body %>
-            <% end %>
             </div>
-            
+
             <div class="pt-2">
-            <%= link_to 'Update Book', book_path, class: "btn btn-success" %>
+            <%= f.submit 'Update Book', class: "btn btn-success" %>
             </div>
 
             <div class="pt-3">
             <p><%= link_to 'Show', book_path %> | <%= link_to 'Back', books_path %></p>
             </div>
 
+            <% end %>
             <div class="pt-5">
             CopyRight Infratop.inc
             </div>

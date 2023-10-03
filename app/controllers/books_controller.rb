@@ -43,10 +43,10 @@ class BooksController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update(users_params)
+    @book = Book.find(params[:id])
+    @book.update(book_params)
     flash[:notice] = "You have updated user successfully."
-    redirect_to user_path(@user.id)
+    redirect_to book_path(@book.id)
   end
 
   private
